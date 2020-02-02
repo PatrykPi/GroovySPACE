@@ -1,0 +1,18 @@
+.main-header {
+    height: 3rem;
+    background-color: red;
+}
+
+.navbar {
+
+    &__nav-menu {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+}
