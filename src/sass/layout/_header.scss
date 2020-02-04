@@ -1,0 +1,63 @@
+.mainNav
+{
+    font-family: $basic-font;
+    position: fixed;
+    font-size: 1.3rem;
+    font-weight: 300;
+    width: 200px;
+    height: 100vh;
+    padding: 15vh 0 15vh 1rem;
+    transform: translateX(-148px);
+    transition: all 0.8s ease-in-out;
+    
+    &:hover
+    {
+        background-color: darken($main-color, 2%);
+        transform: translateX(0);
+    }
+    
+    &:hover &__active
+    {
+        box-shadow: 3px 0px 0px 0px rgba(0,0,0,0);
+    }  
+      
+    &__list
+    {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__item:hover
+    {       
+        box-shadow: 3px 0px 0px 0px $secondary-color !important;
+        background: rgb(7,16,27);
+        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 65%, rgba($secondary-color, .3) 100%);
+    }
+    
+    &__link
+    {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+    }
+ 
+    &__icon
+    {
+        height: 100%;
+        padding: calc(30% - 6.5px) 1rem;
+        font-family: "fontello";
+    }
+    
+    &__text
+    {
+        padding: calc(30% - 6.5px) 0;
+    }
+    
+    &__active
+    {
+        box-shadow: 3px 0px 0px 0px $secondary-color;
+    }
+}
