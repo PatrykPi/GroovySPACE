@@ -37,10 +37,7 @@ module.exports = {
                      
             {
                 test: /\.html$/i,
-                loader: 'html-loader',
-                options: {
-                    attrs: ['img:src', 'link:href']
-                }
+                loader: 'html-loader'
             },
             {
                 test: /\.s[ac]ss$/i,
