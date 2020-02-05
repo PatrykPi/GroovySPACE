@@ -38,6 +38,9 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: 'html-loader',
+                options: {
+                    attrs: ['img:src', 'link:href']
+                }
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -49,7 +52,12 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/',
+                    esModule: false
+                },
             }
         ],
     },
