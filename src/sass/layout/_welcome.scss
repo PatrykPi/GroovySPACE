@@ -2,12 +2,14 @@
     height: 100vh;
 
     overflow: hidden;
-
     display: flex;
+    justify-content: center;
+    align-items: center;
     
     &__background {
-        width: 100%;
-        height: 100%;
+        width: 110%;
+        height: 110%;
+        object-fit: cover;
     }
 
     &__logo{
@@ -17,5 +19,9 @@
         display: flex!important;
         justify-content: center;
         align-items: center;
+    }
+
+    &__logo-img{
+        height: 30vh;
     }
 }

@@ -24,6 +24,7 @@ module.exports = {
             },    
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                exclude: /(images)/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -48,8 +49,9 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 loader: 'file-loader',
+                exclude: /(font)/,
                 options: {
                     name: '[name].[ext]',
                     outputPath: 'images/',
