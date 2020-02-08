@@ -5,16 +5,8 @@
     position: fixed;
     font-size: 1.3rem;
     font-weight: 300;
-    width: 200px;
     height: 100vh;
-    transform: translateX(-148px);
-    transition: all 0.8s ease-in-out;
     
-    &:hover
-    {
-        background-color: darken($main-color, 2%);
-        transform: translateX(0);
-    }
     
     &:hover &__item--active
     {
@@ -23,10 +15,19 @@
       
     &__list
     {
+        transform: translateX(-148px);
+        transition: all 0.8s ease-in-out;
+        width: 200px;
         height: 100%;
         padding: 15vh 0;
         display: flex;
         flex-direction: column;
+        
+        &:hover
+        {
+            background-color: darken($main-color, 2%);
+            transform: translateX(0);
+        }
     }
     
     &__item
@@ -70,35 +71,21 @@
 }
 
 
-@media (max-width: 600px), (hover: none)
+@media (max-width: 700px), (hover: none)
 {
     .mainNav
     {
-        &:hover
-        {
-            transform: translateX(-148px);
-            background-color: rgba(0,0,0,0);
-        }
-        
-        &--expanded
-        {
-            transform: translateX(148px);
-            background-color: darken($main-color, 2%);
-            transition: all 0.8s ease-in-out;
-        }
-        
+        transition: all 0.8s ease-in-out;
+           
         &__toggler
         {
             z-index: 1001;
-            width: 35px;
-            height: 30px;
             position: absolute;
-            top: 1rem;
-            right: 0.5rem;
+            top: 1.3rem;
+            left: 0.5rem;
             padding: 0.3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            height: 1rem;
+            width: 1.8rem;
             
             &:hover
             {
@@ -107,43 +94,99 @@
             
             &--expanded
             {   
-                & .mainNav__toggler-bar--first
+                margin-top: 0;
+                & .mainNav__toggler-bar
                 {
-                    transform-origin: top right;
-                    transform: rotate(-45deg);
-                }
-                & .mainNav__toggler-bar--second
-                {
-                    background-color: rgba(0,0,0,0);
-                } 
-                & .mainNav__toggler-bar--third
-                {
-                    transform-origin: bottom right;
-                    transform: rotate(45deg);
+                    background: rgba(0,0,0,0);
+                    &::after
+                    {
+                        margin-top: 0;
+                        transform: rotate(45deg);
+                    }
+                    &::before
+                    {
+                        margin-top: 0;
+                        transform: rotate(-45deg);
+                    }
                 }
             }
         }
         
+        &__toggler-bar, &__toggler-bar::after, &__toggler-bar::before
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.8s ease;
+            background: white;
+            content: '';
+            height: 0.2rem;
+            width: 100%;
+        }
         &__toggler-bar
         {
-            width: 100%;
-            height: 0.15rem;
-            background-color: #fff;
+            margin-top: 0;
+            
+            &::after
+            {
+                margin-top: 0.6rem;
+            }
+            &::before
+            {
+                margin-top: -0.6rem;
+            }
         }
         
         &__list
         {
+            &:hover
+            {
+                transform: translateX(-148px);
+            }         
+            
              &--expanded
             {
-                transform: translateX(148px);
+                transform: translateX(0px);
                 background-color: darken($main-color, 2%);
-                transition: all 0.8s ease-in-out;
+                
+                &:hover
+                {
+                    transform: translateX(0px);
+                }
             }
         }
     }
 }
 
 
+@media (max-width: 400px)
+{
+    .mainNav
+    {
+        transition: all 0.7s ease;
+        &__list
+        {
+            width: 80vw;
+            transform: translateX(-81vw);
+            
+            &:hover
+            {
+                transform: translateX(-81vw);
+            }         
+            
+             &--expanded
+            {
+                transform: translateX(0px);
+                background-color: darken($main-color, 2%);
+                
+                &:hover
+                {
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+}
 
 
 
