@@ -1,1 +1,20 @@
 // *--------- MIXINS ---------*
+
+@mixin neon($neon-color) 
+{
+  text-shadow:
+      2px 2px 1px rgba(darken($neon-color, 25%), 0.4),
+      -2px -2px 6px rgba(lighten($neon-color, 20%), 0.5),  
+      2px -2px 6px rgba(lighten($neon-color, 20%), 0.5),
+      -2px 2px 6px rgba(lighten($neon-color, 20%), 0.5),
+      2px 2px 6px rgba(lighten($neon-color, 20%), 0.5),
+      -6px -6px 9px rgba($neon-color, 0.5),  
+      6px -6px 9px rgba($neon-color, 0.5),
+      -6px 6px 9px rgba($neon-color, 0.5),
+      6px 6px 9px rgba($neon-color, 0.5);   
+}
+
+.neon
+{
+    @include neon(#f5256b);
+}
