@@ -1,44 +1,57 @@
 .mainNav
 {
+    z-index: 1000;
     font-family: $basic-font;
     position: fixed;
     font-size: 1.3rem;
     font-weight: 300;
-    width: 200px;
     height: 100vh;
-    padding: 15vh 0 15vh 1rem;
-    transform: translateX(-148px);
-    transition: all 0.8s ease-in-out;
     
-    &:hover
-    {
-        background-color: darken($main-color, 2%);
-        transform: translateX(0);
-    }
     
-    &:hover &__active
+    &:hover &__item--active
     {
         box-shadow: 3px 0px 0px 0px rgba(0,0,0,0);
     }  
       
     &__list
     {
+        transform: translateX(-148px);
+        transition: all 0.8s ease-in-out;
+        width: 200px;
         height: 100%;
+        padding: 15vh 0;
         display: flex;
         flex-direction: column;
+        
+        &:hover
+        {
+            background-color: darken($main-color, 2%);
+            transform: translateX(0);
+        }
     }
     
-    &__item:hover
-    {       
-        box-shadow: 3px 0px 0px 0px $secondary-color !important;
-        background: rgb(7,16,27);
-        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 65%, rgba($secondary-color, .3) 100%);
+    &__item
+    {
+        flex: 1;
+        
+        &:hover
+        {       
+            box-shadow: 3px 0px 0px 0px $secondary-color !important;
+            background: rgb(7,16,27);
+            background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 65%, rgba($secondary-color, .3) 100%);
+        }
+        
+        &--active
+        {
+            box-shadow: 3px 0px 0px 0px $secondary-color;
+        }
     }
-    
+
     &__link
     {
         text-decoration: none;
         color: #fff;
+        padding-left: 1rem;
         display: flex;
         justify-content: flex-end;
         flex: 1;
@@ -47,17 +60,136 @@
     &__icon
     {
         height: 100%;
-        padding: calc(30% - 6.5px) 1rem;
+        padding: calc(5.8vh - 0.65rem) 1rem;
         font-family: "fontello";
     }
     
     &__text
     {
-        padding: calc(30% - 6.5px) 0;
-    }
-    
-    &__active
+        padding: calc(5.8vh - 0.65rem) 0;
+    }   
+}
+
+
+@media (max-width: 700px), (hover: none)
+{
+    .mainNav
     {
-        box-shadow: 3px 0px 0px 0px $secondary-color;
+        transition: all 0.8s ease-in-out;
+           
+        &__toggler
+        {
+            z-index: 1001;
+            position: absolute;
+            top: 1.3rem;
+            left: 0.5rem;
+            padding: 0.3rem;
+            height: 1rem;
+            width: 1.8rem;
+            
+            &:hover
+            {
+                cursor: pointer;
+            }
+            
+            &--expanded
+            {   
+                margin-top: 0;
+                & .mainNav__toggler-bar
+                {
+                    background: rgba(0,0,0,0);
+                    &::after
+                    {
+                        margin-top: 0;
+                        transform: rotate(45deg);
+                    }
+                    &::before
+                    {
+                        margin-top: 0;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        
+        &__toggler-bar, &__toggler-bar::after, &__toggler-bar::before
+        {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.8s ease;
+            background: white;
+            content: '';
+            height: 0.2rem;
+            width: 100%;
+        }
+        &__toggler-bar
+        {
+            margin-top: 0;
+            
+            &::after
+            {
+                margin-top: 0.6rem;
+            }
+            &::before
+            {
+                margin-top: -0.6rem;
+            }
+        }
+        
+        &__list
+        {
+            &:hover
+            {
+                transform: translateX(-148px);
+            }         
+            
+             &--expanded
+            {
+                transform: translateX(0px);
+                background-color: darken($main-color, 2%);
+                
+                &:hover
+                {
+                    transform: translateX(0px);
+                }
+            }
+        }
     }
 }
+
+
+@media (max-width: 400px)
+{
+    .mainNav
+    {
+        transition: all 0.7s ease;
+        &__list
+        {
+            width: 80vw;
+            transform: translateX(-81vw);
+            
+            &:hover
+            {
+                transform: translateX(-81vw);
+            }         
+            
+             &--expanded
+            {
+                transform: translateX(0px);
+                background-color: darken($main-color, 2%);
+                
+                &:hover
+                {
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+

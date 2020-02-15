@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "live": "webpack-dev-server",
+    "watch": "webpack --watch",
     "build": "webpack --mode production"
   },
   "repository": {
