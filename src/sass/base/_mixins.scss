@@ -16,5 +16,5 @@
 
 .neon
 {
-    @include neon(#f5256b);
+    @include neon($secondary-color);
 }
