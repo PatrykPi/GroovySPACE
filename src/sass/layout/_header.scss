@@ -3,6 +3,7 @@
     z-index: 1000;
     font-family: $basic-font;
     position: fixed;
+    left: -148px;
     font-size: 1.3rem;
     font-weight: 300;
     height: 100vh;
@@ -15,7 +16,6 @@
       
     &__list
     {
-        transform: translateX(-148px);
         transition: all 0.8s ease-in-out;
         width: 200px;
         height: 100%;
@@ -26,7 +26,7 @@
         &:hover
         {
             background-color: darken($main-color, 2%);
-            transform: translateX(0);
+            transform: translateX(148px);
         }
     }
     
@@ -76,13 +76,14 @@
     .mainNav
     {
         transition: all 0.8s ease-in-out;
+        left: -210px;
            
         &__toggler
         {
-            z-index: 1001;
+            z-index: 10000;
             position: absolute;
             top: 1.3rem;
-            left: 0.5rem;
+            right: -50px;
             padding: 0.3rem;
             height: 1rem;
             width: 1.8rem;
@@ -141,55 +142,16 @@
         {
             &:hover
             {
-                transform: translateX(-148px);
-            }         
-            
+                transform: translateX(210px);
+            }   
              &--expanded
             {
-                transform: translateX(0px);
+                transform: translateX(210px);
                 background-color: darken($main-color, 2%);
-                
-                &:hover
-                {
-                    transform: translateX(0px);
-                }
             }
         }
     }
 }
-
-
-@media (max-width: 400px)
-{
-    .mainNav
-    {
-        transition: all 0.7s ease;
-        &__list
-        {
-            width: 80vw;
-            transform: translateX(-81vw);
-            
-            &:hover
-            {
-                transform: translateX(-81vw);
-            }         
-            
-             &--expanded
-            {
-                transform: translateX(0px);
-                background-color: darken($main-color, 2%);
-                
-                &:hover
-                {
-                    transform: translateX(0px);
-                }
-            }
-        }
-    }
-}
-
-
-
 
 
 
