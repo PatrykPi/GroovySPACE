@@ -58,13 +58,14 @@ p
 
 
 // --------- fonts ---------
-@font-face {
+@font-face 
+{
       font-family: 'fontello';
-      src: url('././assets/icons/font/fontello.eot');
-      src: url('././assets/icons/font/fontello.eot') format('embedded-opentype'),
-           url('././assets/icons/font/fontello.woff') format('woff'),
-           url('././assets/icons/font/fontello.ttf') format('truetype'),
-           url('././assets/icons/font/fontello.svg') format('svg');
+      src: url('././assets/icons/font/fontello.eot?58539354');
+      src: url('././assets/icons/font/fontello.eot?58539354#iefix') format('embedded-opentype'),
+           url('././assets/icons/font/fontello.woff?58539354') format('woff'),
+           url('././assets/icons/font/fontello.ttf?58539354') format('truetype'),
+           url('././assets/icons/font/fontello.svg?58539354#fontello') format('svg');
       font-weight: normal;
       font-style: normal;
     }

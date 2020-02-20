@@ -7,8 +7,8 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "43e4647c57186b5e06874621b5e665be",
-      "css": "calendar",
+      "uid": "572c9ded6a688698dc275b30ff30fefa",
+      "css": "music",
       "code": 59392,
       "src": "linecons"
     },
@@ -19,8 +19,8 @@
       "src": "linecons"
     },
     {
-      "uid": "572c9ded6a688698dc275b30ff30fefa",
-      "css": "music",
+      "uid": "b8e88705f42bd79580be828233c65da0",
+      "css": "money",
       "code": 59394,
       "src": "linecons"
     },
@@ -31,15 +31,21 @@
       "src": "linecons"
     },
     {
-      "uid": "b8e88705f42bd79580be828233c65da0",
-      "css": "money",
-      "code": 59396,
+      "uid": "43e4647c57186b5e06874621b5e665be",
+      "css": "calendar",
+      "code": 59397,
       "src": "linecons"
     },
     {
-      "uid": "4b7f817f780705a5d267ad59e855da91",
-      "css": "graduation-cap",
-      "code": 59397,
+      "uid": "b7bd78e163801889af145e513d6c5383",
+      "css": "mic-outline",
+      "code": 59398,
+      "src": "typicons"
+    },
+    {
+      "uid": "8573943a49ed6dd8f7819070445baa46",
+      "css": "photo",
+      "code": 59396,
       "src": "linecons"
     }
   ]
