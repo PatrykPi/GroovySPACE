@@ -6,6 +6,7 @@
                 doToggle: function (e)
                     {
                         e.preventDefault();
+                        e.stopPropagation();
                         this.navToggle.classList.toggle('mainNav__toggler--expanded');
                         this.nav.classList.toggle('mainNav__list--expanded');
                     }
