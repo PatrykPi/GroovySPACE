@@ -21,10 +21,10 @@ module.exports = {
                         plugins: ['@babel/plugin-proposal-object-rest-spread']
                     }
                 }
-            },
-            
+            },    
             {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                exclude: /(images)/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -38,7 +38,7 @@ module.exports = {
                      
             {
                 test: /\.html$/i,
-                loader: 'html-loader',
+                loader: 'html-loader'
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -49,8 +49,14 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif)$/i,
-                loader: 'file-loader'
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                loader: 'file-loader',
+                exclude: /(font)/,
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'images/',
+                    esModule: false
+                },
             }
         ],
     },
