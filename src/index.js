@@ -2,6 +2,7 @@ import "./main.scss";
 
 import "./js/welcome.js";
 import "./js/MainNav-toggler.js";
+import "./js/scroll.js";
 import "./js/instruments.js";
 
 import "./assets/images/drum-bg.jpg";
