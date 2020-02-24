@@ -1,5 +1,3 @@
-$secondary-color: #b709c4;
-
 .instruments
 {
     margin-bottom: 100px;
@@ -15,11 +13,6 @@ $secondary-color: #b709c4;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        
-        &--bigger
-        {
-             @include neon($secondary-color);
-        }
     }
     
     &__wrapper
