@@ -16,5 +16,23 @@
 
 .neon
 {
-    @include neon(#f5256b);
+    @include neon($secondary-color);
+}
+
+@mixin medium-heading()
+{
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.3rem;
+    font-variant: small-caps;
+}
+
+@mixin small-heading()
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.4rem;
+    font-variant: small-caps;
 }

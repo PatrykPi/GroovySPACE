@@ -1,0 +1,184 @@
+.instruments
+{
+    margin-bottom: 100px;
+    width: 100%;
+    
+    &__main-heading
+    {
+        width: 100%;
+        height: 16rem;
+        text-align: center;
+        background-color: lighten($main-color, 2%);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    &__wrapper
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    &__half
+    {
+        flex: 1;
+        height: 90vh;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        
+        &--second
+        {
+            background-image: url("./assets/images/console.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    } 
+    
+    &__main-photo
+    {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    &__heading
+    {
+        @include medium-heading();
+        padding-bottom: 2rem;
+        line-height: 1.1;
+    }
+    
+    &__text
+    {
+        flex: 1;
+        width: 100%;
+        padding: 2rem 5rem; 
+        text-align: center;
+    }
+    
+    &__buttons-wrapper
+    {
+        display: flex;
+    }
+    
+    &__button
+    {
+        flex: 1;
+        height: 10vw;
+        background-color: lighten($main-color, 2%);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        &:hover
+        {
+            z-index: 1000;
+            background: linear-gradient(0deg, rgba(lighten($main-color, 2%), 1) 0%, rgba(lighten($main-color, 2%), 1) 65%, rgba($secondary-color, .3) 100%);
+            background-color: lighten($main-color, 2%);
+            box-shadow: 0px -3px 0px 0px $secondary-color;
+            cursor: pointer;
+        }
+        
+        &--active
+        {
+            z-index: 1000;
+            box-shadow: 0px -3px 0px 0px $secondary-color;
+            background: linear-gradient(0deg, rgba(lighten($main-color, 2%), 1) 0%, rgba(lighten($main-color, 2%), 1) 65%, rgba($secondary-color, .3) 100%);
+            background-color: lighten($main-color, 2%);
+        }
+    } 
+    
+    &__icon
+    {
+        max-width: 30%;
+        max-height: 50%;
+        margin: 0 auto;
+
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1100px)
+{
+    .instruments
+    {     
+        &__text
+        {
+            padding: 2rem 2rem; 
+        }
+        &__heading
+        {
+            @include small-heading();
+        }
+    }
+}
+
+@media (min-width: 501px) and (max-width: 720px)
+{
+        .instruments
+        {
+            &__wrapper
+            {
+                flex-direction: column;
+            }
+            &__half
+            {
+                height: 50vh;
+                width: 100%;
+            }
+            &__text
+            {
+                padding: 2rem 2rem;
+            }
+            &__heading
+            {
+                @include small-heading();
+            }
+            &__paragraph
+            {
+                line-height: 1.5;
+            }
+        }
+}
+
+@media (max-width: 500px)
+{
+    .instruments
+    {
+        .instruments
+        {
+            &__wrapper
+            {
+                flex-direction: column;
+            }
+            &__half
+            {
+                height: 50vh;
+                width: 100%;
+                 &--second
+                {
+                    height: 90vh;
+                }
+            }
+            &__text
+            {
+                padding: 2rem 2rem;
+            }
+            &__heading
+            {
+                @include small-heading();
+                padding-bottom: 1rem;
+                line-height: 1.1;
+            }
+            &__paragraph
+            {
+                line-height: 1.5;
+                font-size: 1rem;
+            }
+        }
+    }
+}

@@ -154,4 +154,32 @@
 }
 
 
+@media (max-width: 500px)
+{
+    .mainNav
+    {
+        transition: all 0.7s ease;
+        &__list
+        {
+            width: 80vw;
+            transform: translateX(-81vw);
+            
+            &:hover
+            {
+                transform: translateX(-81vw);
+            }         
+            
+             &--expanded
+            {
+                transform: translateX(0px);
+                background-color: darken($main-color, 2%);
+                
+                &:hover
+                {
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+}
 
