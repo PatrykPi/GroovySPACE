@@ -5,6 +5,23 @@ $secondary-color: #b709c4;
     margin-bottom: 100px;
     width: 100%;
     
+    &__main-heading
+    {
+        width: 100%;
+        height: 16rem;
+        text-align: center;
+        background-color: lighten($main-color, 2%);
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        &--bigger
+        {
+             @include neon($secondary-color);
+        }
+    }
+    
     &__wrapper
     {
         display: flex;
@@ -59,7 +76,7 @@ $secondary-color: #b709c4;
     {
         flex: 1;
         height: 10vw;
-        background-color: lighten($main-color, 1%);
+        background-color: lighten($main-color, 2%);
         
         display: flex;
         flex-direction: column;
@@ -68,8 +85,8 @@ $secondary-color: #b709c4;
         &:hover
         {
             z-index: 1000;
-            background: linear-gradient(0deg, rgba(lighten($main-color, 1%), 1) 0%, rgba(lighten($main-color, 1%), 1) 65%, rgba($secondary-color, .3) 100%);
-            background-color: lighten($main-color, 1%);
+            background: linear-gradient(0deg, rgba(lighten($main-color, 2%), 1) 0%, rgba(lighten($main-color, 2%), 1) 65%, rgba($secondary-color, .3) 100%);
+            background-color: lighten($main-color, 2%);
             box-shadow: 0px -3px 0px 0px $secondary-color;
             cursor: pointer;
         }
@@ -78,8 +95,8 @@ $secondary-color: #b709c4;
         {
             z-index: 1000;
             box-shadow: 0px -3px 0px 0px $secondary-color;
-            background: linear-gradient(0deg, rgba(lighten($main-color, 1%), 1) 0%, rgba(lighten($main-color, 1%), 1) 65%, rgba($secondary-color, .3) 100%);
-            background-color: lighten($main-color, 1%);
+            background: linear-gradient(0deg, rgba(lighten($main-color, 2%), 1) 0%, rgba(lighten($main-color, 2%), 1) 65%, rgba($secondary-color, .3) 100%);
+            background-color: lighten($main-color, 2%);
         }
     } 
     
