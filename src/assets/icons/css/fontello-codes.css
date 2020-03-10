@@ -5,4 +5,11 @@
 .icon-attach:before { content: '\e803'; } /* '' */
 .icon-photo:before { content: '\e804'; } /* '' */
 .icon-calendar:before { content: '\e805'; } /* '' */
-.icon-mic-outline:before { content: '\e806'; } /* '' */
+.icon-cancel:before { content: '\e806'; } /* '' */
+.icon-right-open-mini:before { content: '\e80c'; } /* '' */
+.icon-left-open-mini:before { content: '\e80d'; } /* '' */
+.icon-twitter-circled:before { content: '\f30a'; } /* '' */
+.icon-facebook-circled:before { content: '\f30d'; } /* '' */
+.icon-gplus-circled:before { content: '\f310'; } /* '' */
+.icon-pinterest-circled:before { content: '\f313'; } /* '' */
+.icon-linkedin-circled:before { content: '\f319'; } /* '' */

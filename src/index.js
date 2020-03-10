@@ -4,6 +4,7 @@ import "./js/welcome.js";
 import "./js/MainNav-toggler.js";
 import "./js/scroll.js";
 import "./js/instruments.js";
+import "./js/gallery.js";
 
 import "./assets/images/drum-bg.jpg";
 import "./assets/images/piano.jpg";
