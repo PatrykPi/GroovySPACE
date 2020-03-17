@@ -24,7 +24,7 @@
     &__half
     {
         flex: 1;
-        height: 90vh;
+        min-height: 90vh;
         
         display: flex;
         flex-direction: column;
@@ -47,9 +47,12 @@
     
     &__heading
     {
-        @include medium-heading();
-        padding-bottom: 2rem;
+        font-size: 2.3rem;
+        font-weight: 700;
         line-height: 1.1;
+        letter-spacing: 0.3rem;
+        font-variant: small-caps;
+        padding-bottom: 2rem;  
     }
     
     &__text
