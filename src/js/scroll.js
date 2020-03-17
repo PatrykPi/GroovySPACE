@@ -1,60 +1,67 @@
-(function()
-{
-    var menuButtons = document.querySelectorAll(".mainNav__item"),
-        targetClasses =[".about", ".prices", ".reservation", ".gallery", ".statute", ".contact"],
-        targetPointers = [];   
+(function(){
+    const menuButtons = document.querySelectorAll(".mainNav__item"),
+          targetClasses = document.querySelectorAll("section[data-section-navigation]");   
     
-    for (var i=0; i<targetClasses.length; i++)
-        {
-            targetPointers.push(document.querySelector(targetClasses[i]));
-        } 
-
-    
-    function animateScrollDown(targetPosition, moveStep)
-    {        
-        if (window.scrollY < targetPosition)
-            {
-                window.scrollBy(0, moveStep);
-                setTimeout(function(){animateScrollDown(targetPosition, moveStep);}, 5);
-            }
+    function animateScrollDown(targetPosition, moveStep){
+        if (window.scrollY < targetPosition){
+            window.scrollBy(0, moveStep);
+            setTimeout(() => animateScrollDown(targetPosition, moveStep), 5);
+        }
     } 
     
-    function animateScrollUp(targetPosition, moveStep)
-    {    
-        if (window.scrollY > targetPosition)
-            {
-                window.scrollBy(0, moveStep);
-                setTimeout(function(){animateScrollUp(targetPosition, moveStep);}, 5);
+    function animateScrollUp(targetPosition, moveStep){
+        if (window.scrollY > targetPosition){
+            window.scrollBy(0, moveStep);
+            setTimeout(() => animateScrollUp(targetPosition, moveStep), 5);
             }
     }
     
-    function startScroll(target)
-    {
-        var startPosition = window.scrollY,
+    function startScroll(target){
+        let startPosition = window.scrollY,
             targetPosition = target.getBoundingClientRect().top,
             positionSum = targetPosition + startPosition,
             moveStep = 10;
 
-        if (targetPosition < 0)
-            {
-                moveStep *= (-1);
-                animateScrollUp(positionSum, moveStep);
+        if (targetPosition < 0){
+            moveStep *= (-1);
+            animateScrollUp(positionSum, moveStep);
+        }
+        else{
+            if (positionSum > (document.body.scrollHeight - window.innerHeight)){
+                positionSum = document.body.scrollHeight - window.innerHeight;
             }
-        else
-            {
-                if (positionSum > (document.body.scrollHeight - window.innerHeight))
-                    {
-                        positionSum = document.body.scrollHeight - window.innerHeight;
-                    }
-                animateScrollDown(positionSum, moveStep);
+            animateScrollDown(positionSum, moveStep);
+        }
+    }
+    
+   
+    for(let i = 0; i < menuButtons.length; i++){
+        menuButtons[i].addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            startScroll(targetClasses[i])}, false); 
+    }
+    
+    //change active li in menu
+    
+    function changeActiveMenuClass(){   
+        const length = targetClasses.length-1;
+        for(let i = 0; i < length; i++) {
+            if (targetClasses[i].getBoundingClientRect().top - window.innerHeight <= 0 && targetClasses[i+1].getBoundingClientRect().top - window.innerHeight > 0) {
+                menuButtons[i].classList.add("mainNav__item--active");
             }
+            else {
+                menuButtons[i].classList.remove("mainNav__item--active");
+            }
+        }
+        if (targetClasses[length].getBoundingClientRect().top - window.innerHeight <= 0) {
+            menuButtons[length].classList.add("mainNav__item--active");
+        }
+        else {
+            menuButtons[length].classList.remove("mainNav__item--active");
+        }
     }
 
-    menuButtons[0].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[0])}, false);
-    menuButtons[1].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[1])}, false);
-    menuButtons[2].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[2])}, false);
-    menuButtons[3].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[3])}, false);
-    menuButtons[4].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[4])}, false);
-    menuButtons[5].addEventListener("click", function(e){e.preventDefault();startScroll(targetPointers[5])}, false);
+    window.addEventListener("scroll", () => changeActiveMenuClass(), false);
 
 }());
